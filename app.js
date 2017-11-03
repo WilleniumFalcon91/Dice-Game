@@ -13,6 +13,21 @@ var scores = [0,0];
 var roundScore = 0;
 var activePlayer = 0;
 
-var dice = Math.floor(Math.random() * 6) + 1; 
+// var dice = Math.floor(Math.random() * 6) + 1; 
 
-document.querySelector('#current-' + activePlayer).textContent = dice;
+// document.querySelector('#current-' + activePlayer).textContent = dice;
+
+document.querySelector('.dice').style.display = 'none';
+
+document.querySelector('.btn-roll').addEventListener('click', function() {
+    //1. Random Number
+    var dice = Math.floor(Math.random() * 6) + 1; 
+
+    //2. Display The Result
+    var diceDOM = document.querySelector('.dice');
+    diceDOM.style.display = 'block';
+    diceDOM.src = "images/dice-" + dice + ".png";
+
+    //3. Update round score if the rolled number was NOT 1
+
+});
